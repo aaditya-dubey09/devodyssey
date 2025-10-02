@@ -153,7 +153,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/) speci
 
 ### Commit Message Format
 
-```
+```text
 <type>(<scope>): <subject>
 
 <body>
@@ -340,7 +340,7 @@ Update documentation when you:
 
 - **GitHub Issues**: Ask questions by opening an issue with the `question` label
 - **Discussions**: Use GitHub Discussions for general conversations
-- **Email**: Contact maintainers at ad2340033@gmail.com
+- **Email**: Contact maintainers at [ad2340033@gmail.com](mailto:ad2340033@gmail.com)
 
 ### Communication Guidelines
 
@@ -362,4 +362,4 @@ Contributors who submit accepted PRs will be:
 
 Thank you for contributing to DevOdyssey! Your efforts help make this project better for everyone.
 
-**Questions?** Feel free to reach out through GitHub Issues or email us at ad2340033@gmail.com.
+**Questions?** Feel free to reach out through GitHub Issues or email us at [ad2340033@gmail.com](mailto:ad2340033@gmail.com).
