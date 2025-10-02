@@ -1,22 +1,40 @@
-# Security Policy
+# 🔒 Security Policy
 
-## Supported Versions
+## 📌 Supported Versions  
 
-The following versions of the `devodyssey` project are currently supported with security updates. We encourage you to use the latest stable version to ensure you have the most recent security patches.
+The following versions of the **devodyssey** project are currently receiving security updates.  
+We strongly recommend upgrading to the **latest stable version** to ensure you benefit from all security patches.  
 
 | Version | Supported |
-| --- | --- |
-| 1.0.0 | :white_check_mark: |
-| 0.x.x (e.g., development versions) | :x: |
+| ------- | ---------- |
+| 1.0.0   | ✅ Supported |
+| 0.x.x (development versions) | ❌ Not Supported |
 
-## Reporting a Vulnerability
+---
 
-We take security vulnerabilities seriously. We appreciate your efforts to responsibly disclose your findings. To report a security vulnerability in the `devodyssey` project, please follow these steps:
+## 🛡️ Reporting a Vulnerability  
 
-1. **Do not** open a public issue. Publicly disclosing a vulnerability could put users at risk.
-2. Please send a detailed email to [ad2340033@gmail.com](Mailto:ad2340033@gmail.com) with the subject line "Security Vulnerability Report for devodyssey".
-3. In the email, please provide a clear description of the vulnerability, steps to reproduce it, and your contact information.
-4. We will acknowledge receipt of your email within 48 hours.
-5. We will provide an update on the vulnerability's status within 7-14 days.
+We take the security of our project and its users very seriously. If you discover a vulnerability, we kindly ask that you follow **responsible disclosure practices**.  
 
-We will keep you informed of our progress and, once the vulnerability is patched, we will coordinate with you on a public disclosure if you wish to be credited.
+### ✅ How to Report  
+1. **Do not** open a public issue. Publicly disclosing security vulnerabilities may put users at risk.  
+2. Instead, please email us at **[ad2340033@gmail.com](mailto:ad2340033@gmail.com)** with the subject line:  
+   `Security Vulnerability Report for devodyssey`  
+3. Include the following details in your report:  
+   - A clear and concise description of the vulnerability.  
+   - Steps to reproduce the issue (proof-of-concept if possible).  
+   - The potential impact of the vulnerability.  
+   - Any suggested fixes or mitigations (optional but appreciated).  
+   - Your contact information for follow-up.  
+
+---
+
+### 📩 What to Expect  
+- **Acknowledgment:** We will confirm receipt of your report within **48 hours**.  
+- **Status Updates:** You will receive updates on our progress within **7–14 days**.  
+- **Collaboration:** Once the issue is resolved, we may coordinate a disclosure timeline with you. If you wish, we will credit you for your contribution.  
+
+---
+
+## 🙏 Thank You  
+Your efforts in identifying and responsibly disclosing vulnerabilities help make **devodyssey** safer for everyone. We appreciate your contribution to keeping our community secure.  
