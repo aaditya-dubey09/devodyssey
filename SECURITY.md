@@ -1,4 +1,4 @@
-# Security Policy
+# 🔒 Security Policy
 
 ## Our Commitment
 
@@ -15,7 +15,7 @@ We provide security updates for the following versions of DevOdyssey:
 
 **We strongly recommend using the latest stable version** to ensure you have the most recent security patches and updates.
 
-## Reporting a Vulnerability
+---
 
 If you discover a security vulnerability in DevOdyssey, please help us by reporting it responsibly.
 

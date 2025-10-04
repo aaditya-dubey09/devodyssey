@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  name: Ask a question or get support
+  url: https://www.google.com/search?q=https://github.com/aaditya-dubey09/devodyssey/discussions
+  about: Please use discussions for general questions or setup help, not bug reports or feature requests.

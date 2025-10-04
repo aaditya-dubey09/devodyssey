@@ -177,6 +177,12 @@ The backend provides a RESTful API with the following main endpoints:
 
 For detailed API documentation, please refer to the [server README](./server/README.md).
 
+## Contributors
+
+<a href="https://github.com/aaditya-dubey09/devodyssey/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=aaditya-dubey09/devodyssey" />
+</a>
+
 ## Contributing
 
 1. Fork the repository
