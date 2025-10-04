@@ -1,4 +1,4 @@
-<span style="text-align: center;">
+<div style="text-align: center;">
 
 # ![DevOdyssey Banner](https://img.shields.io/badge/DevOdyssey-Hacktoberfest_2025-indigo?style=for-the-badge&logo=git&logoColor=orange)
 
@@ -12,7 +12,7 @@
 [![Express](https://img.shields.io/badge/Express-5+-black.svg)](https://expressjs.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-14+-green.svg)](https://nodejs.org/)
 
-</span>
+</div>
 
 A modern, SEO-optimized blog platform built with the MERN stack, designed for developers to share insights, tutorials, and experiences in web development, technology, and beyond.
 
@@ -262,7 +262,7 @@ If you encounter any issues or have questions, please:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
