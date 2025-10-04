@@ -1,10 +1,18 @@
-# DevOdyssey
+<span style="text-align: center;">
+
+# ![DevOdyssey Banner](https://img.shields.io/badge/DevOdyssey-Hacktoberfest_2025-indigo?style=for-the-badge&logo=git&logoColor=orange)
+
+[![Hacktoberfest 2025](https://img.shields.io/badge/Hacktoberfest-2025-ff6b35?style=for-the-badge&logo=hacktoberfest&logoColor=white)](https://hacktoberfest.digitalocean.com/)
+[![Contributors Welcome](https://img.shields.io/badge/Contributors-Welcome-brightgreen?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MRIEnan/clickhub_hactoberfest2025/blob/main/CONTRIBUTING.md)
+[![Pull Requests](https://img.shields.io/badge/PRs-Welcome-blue?style=for-the-badge&logo=git&logoColor=white)](https://github.com/MRIEnan/clickhub_hactoberfest2025/pulls)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-14+-green.svg)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4.4+-green.svg)](https://mongodb.com/)
 [![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org/)
 [![Express](https://img.shields.io/badge/Express-5+-black.svg)](https://expressjs.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-14+-green.svg)](https://nodejs.org/)
+
+</span>
 
 A modern, SEO-optimized blog platform built with the MERN stack, designed for developers to share insights, tutorials, and experiences in web development, technology, and beyond.
 
@@ -48,6 +56,7 @@ DevOdyssey is a comprehensive blogging platform that combines powerful content m
 - **Environment variables** for configuration management
 
 ## Project Structure
+
 ```bash
 devodyssey/
 ├── client/                 # React frontend application
@@ -59,6 +68,9 @@ devodyssey/
 │   ├── package.json
 │   └── README.md
 ├── License               # License
+├── Code_of_Conduct       # Code of Conduct
+├── Contributing.md       # Contributing Guidelines
+├── Security.md           # Security Policy
 └── README.md             # This file
 ```
 
@@ -176,6 +188,12 @@ The backend provides a RESTful API with the following main endpoints:
 - `DELETE /api/posts/:id` - Delete blog post
 
 For detailed API documentation, please refer to the [server README](./server/README.md).
+> <div align='right'>
+>
+> [⬆ Back to top](#overview)
+>
+> </div>
+
 
 ## Contributors
 
@@ -244,7 +262,7 @@ If you encounter any issues or have questions, please:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ## Acknowledgments
 
@@ -259,3 +277,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Live Demo**: [DevOdyssey](https://devodyssey.vercel.app)
 
 For more detailed information about the client or server setup, please refer to their respective README files.
+> <div align='right'>
+>
+> [⬆ Back to top](#overview)
+>
+> </div>

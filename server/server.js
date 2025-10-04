@@ -19,7 +19,9 @@ app.use(cookieParser());
 // Import routes
 import userRoutes from './routes/user.routes.js';
 import blogRoutes from './routes/blogs.routes.js';
+import rateLimiter from './middlewares/rateLimter.js';
 
+app.use('/api/', rateLimiter);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/blogs', blogRoutes);
 
