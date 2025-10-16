@@ -105,7 +105,7 @@ const Blog = () => {
 
             <div className="flex items-center gap-4 mb-6 text-sm text-white/80">
                 <span className='flex items-center gap-2'>
-                    <button onClick={handleLike} className="p-1 duration-300 rounded-full cursor-pointer transition-color hover:bg-red-400/50 hover:text-white hover:text-black">
+                    <button onClick={handleLike} className="p-1 duration-300 rounded-full cursor-pointer transition-color hover:bg-red-400/50 hover:text-black">
                         <BiLike />
                     </button>{blog.likes?.length}
                 </span>
@@ -113,7 +113,7 @@ const Blog = () => {
                     <FaEye /> {blog.views}
                 </span>
                 <span className='flex items-center gap-2'>
-                    <span className="p-1 duration-300 bg-opacity-50 rounded-full cursor-pointer transition-color hover:bg-blue-500/50 hover:text-white hover:text-black">
+                    <span className="p-1 duration-300 bg-opacity-50 rounded-full cursor-pointer transition-color hover:bg-blue-500/50 hover:text-black">
                         <FaRegComment /> 
                     </span>{blog.comments?.length}
                 </span>
