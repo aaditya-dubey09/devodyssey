@@ -104,14 +104,18 @@ const Blog = () => {
             <hr className="mb-6 border-gray-700" />
 
             <div className="flex items-center gap-4 mb-6 text-sm text-white/80">
-                <button onClick={handleLike} className="flex items-center gap-2 hover:text-white">
-                    <BiLike /> {blog.likes?.length}
-                </button>
+                <span className='flex items-center gap-2'>
+                    <button onClick={handleLike} className="p-1 duration-300 rounded-full cursor-pointer transition-color hover:bg-red-400/50 hover:text-black">
+                        <BiLike />
+                    </button>{blog.likes?.length}
+                </span>
                 <span className="flex items-center gap-2">
                     <FaEye /> {blog.views}
                 </span>
-                <span className="flex items-center gap-2">
-                    <FaRegComment /> {blog.comments?.length}
+                <span className='flex items-center gap-2'>
+                    <span className="p-1 duration-300 bg-opacity-50 rounded-full cursor-pointer transition-color hover:bg-blue-500/50 hover:text-black">
+                        <FaRegComment /> 
+                    </span>{blog.comments?.length}
                 </span>
                 <ShareButton blog={blog} />
             </div>
@@ -122,10 +126,10 @@ const Blog = () => {
                     <div key={comment._id} className="mb-4">
                         <div className='flex items-center gap-1'
                             onClick={handleClickAuthor}>
-                            {comment ? 
-                            <img src={comment.commentedBy.avatar || defaultAvatar} alt="avatar" className="w-4 h-4 rounded-full" />
-                            : <CgProfile className="w-4 h-4 rounded-full" />}
-                            <h4 className="text-[10px] font-semibold text-white">@{comment.commentedBy.username || 'unknown' }</h4>
+                            {comment ?
+                                <img src={comment.commentedBy.avatar || defaultAvatar} alt="avatar" className="w-4 h-4 rounded-full" />
+                                : <CgProfile className="w-4 h-4 rounded-full" />}
+                            <h4 className="text-[10px] font-semibold text-white">@{comment.commentedBy.username || 'unknown'}</h4>
                             <p className="text-[9px] text-gray-500 ml-1">{dayjs(comment.createdAt).fromNow()}</p>
                         </div>
                         <div className="flex items-center justify-between mt-1">

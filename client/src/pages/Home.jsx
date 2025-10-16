@@ -10,6 +10,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import { devOdysseyTour } from "../components/utils/driverTour";
 import bgImage from "../assets/background.jpg";
 import aboutImage from "../assets/about.png";
+import { motion } from "framer-motion";
 
 function Home() {
   const navigate = useNavigate();
@@ -88,13 +89,30 @@ function Home() {
               Welcome to <span className="text-blue-500">DevOdyssey!</span>
             </h1>
             <p className="mb-4 text-xs md:text-sm text-white/70">Your space to create, discover, and grow as a developer.</p>
-            <div className="flex -space-x-2">
+            <motion.div className="flex -space-x-2">
               {blogs.map((b, idx) => (
-                <div key={b._id || idx} className="p-2 mt-1 rounded-full bg-gray-900/50 h-9 w-9">
-                  <img src={b.author?.avatar || defaultAvatar} alt="Author profile" className="w-6 h-6 rounded-full " />
-                </div>
+                <motion.div
+                  key={b._id || idx}
+                  whileHover={{ scale: 1.5 }}
+                  transition={{ type: "tween", stiffness: 300 }}
+                  className="p-2 mt-1 rounded-full bg-gray-900/50 h-9 w-9">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    whileHover={{ opacity: 1, y: -20 }} // Animate opacity and position on hover
+                    className="absolute z-20 px-3 py-1 -translate-x-1/2 rounded-md shadow-lg pointer-events-none bottom-full left-1/2 whitespace-nowrap bg-gray-800/90" // pointer-events-none ensures the tooltip doesn't block the click
+                  >
+                    <span className="text-[10px] text-white">@{b.author?.username || "unknown"}</span>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-0 h-0 border-t-[6px] border-t-gray-800/90 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent translate-y-[5px]"></div>
+                  </motion.div>
+                  <img
+                    src={b.author?.avatar || defaultAvatar}
+                    alt="Author profile"
+                    className="w-6 h-6 rounded-full " />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
             <span className="text-[8px] md:text-[10px] text-white/70 mt-2">Join the our community! and start your writing journey
               <span className="font-bold"> {[...new Set(blogList.map(b => b.author?.username))].length}&#43;</span>
               <span className="text-[8px] md:text-[10px] text-white/60"> authors.</span>
@@ -113,18 +131,26 @@ function Home() {
       </div>
 
       {/* About Section */}
-      <div className="p-5 text-white bg-black">
-        <h3 className="mt-12 mb-5 text-xl font-bold text-blue-400 md:text-2xl md:text-center">What is DevOdyssey?</h3>
+      <div className="p-5 bg-black">
+        <h3 className="mt-12 mb-5 text-xl font-extrabold text-transparent bg-gradient-to-b from-blue-400 via-blue-400 to-transparent bg-clip-text md:text-4xl md:text-center">What is DevOdyssey?</h3>
         <p className="max-w-3xl mx-auto text-justify text-white/80">
-          DevOdyssey is a vibrant, open source platform where developers and creators share their ideas, stories, and projects. Discover trending blogs, connect with authors, and grow your knowledge in a welcoming community.
+          DevOdyssey is a vibrant, open source platform where developers and creators share their ideas, stories, and projects. Discover trending blogs, connect with authors, and grow your knowledge in a welcoming community. Whether you're a seasoned developer or just starting out, DevOdyssey provides the tools and audience to amplify your voice. Join us and start your journey today!
+        </p>
+          <br />
+          <br />
+        <p className="max-w-3xl mx-auto text-justify text-white/80 indent-96">
+          At DevOdyssey, we believe in the power of storytelling to inspire and educate. Our platform is designed to make it easy for you to publish your work, engage with readers, and explore a diverse range of topics in technology and development. From tutorials and personal experiences to industry insights and project showcases, there's something for everyone.
         </p>
 
-        <h3 className="mt-16 text-lg font-bold md:text-xl md:ml-52">About</h3>
-        <div className="flex flex-col items-center justify-between max-w-4xl gap-5 mx-auto md:flex-row">
-          <p className="flex-1 text-justify text-white/80">
-            Whether you're a seasoned developer or just starting out, DevOdyssey provides the tools and audience to amplify your voice. Join us and start your journey today!
+        <h3 className="mt-12 mb-2 text-xl font-extrabold text-transparent ml-52 bg-gradient-to-b from-blue-400 via-blue-400 to-transparent bg-clip-text md:text-4xl">About</h3>
+        <div className="grid max-w-5xl grid-cols-2 gap-6 p-5 mx-auto mb-12 bg-opacity-50 md:grid-cols-1">
+          <p className="text-justify text-white/80 indent-10">
+            DevOdyssey is the brainchild of a passionate developer who wanted to create a space where like-minded individuals could come together to share their journeys and learn from one another. Built with modern technologies like the MERN stack, our platform is fast, responsive, and user-friendly. We are committed to fostering a supportive community where everyone can thrive and contribute to the ever-evolving world of technology.
           </p>
-          <img className="w-[30%] rounded-lg" src={aboutImage} alt="about" />
+          <p className="text-justify text-white/80 indent-48">
+            Our team is dedicated to continuously improving the platform and providing the best possible experience for our users. We believe in the power of collaboration and are always open to feedback and suggestions. Together, we can build a platform that truly serves the needs of the developer community.
+          </p>
+          <img src={aboutImage} alt="About DevOdyssey" className="mx-auto mt-4 rounded-lg shadow-lg" />
         </div>
 
         {/* --- Tech Stack Used --- */}
@@ -189,7 +215,7 @@ function Home() {
           >
             {layout === "grid"
               ? blogs.map((b, idx) => (
-                <div key={b._id || idx} className="flex flex-col gap-3 p-6 text-white rounded-xl bg-slate-900/50 hover:shadow-blue-500/30 hover:scale-[1.03] transition-transform cursor-pointer" onClick={() => handleBlogClick(b)}>
+                <div key={b._id || idx} className="flex flex-col gap-3 p-6 rounded-xl bg-slate-900/50 hover:shadow-blue-500/30 hover:scale-[1.03] transition-transform cursor-pointer" onClick={() => handleBlogClick(b)}>
                   <div className="flex items-center gap-2 mb-2 text-xs" onClick={e => { e.stopPropagation(); handleClickAuthor(b); }}>
                     <img src={b.author?.avatar || defaultAvatar} alt="Author profile" className="w-6 h-6 border-l-2 rounded-full border-l-blue-600" />
                     <span className="text-xs text-white">@{b.author?.username || "unknown"}</span>
@@ -198,7 +224,8 @@ function Home() {
                     <span className="text-[10px] text-gray-400">{minutes} mins read</span>
                   </div>
                   <hr className="mb-2 border-gray-700 " />
-                  <h3 className="text-lg font-bold">{b.title}</h3>
+                  <h3
+                    className="text-lg font-bold hover:text-blue-500">{b.title}</h3>
                   <p className="text-sm text-white/80 line-clamp-4">{b.content}</p>
                   <div className="flex items-center gap-4 mt-2 text-white/70">
                     <span className="flex items-center gap-1"><BiLike /> {b.likes?.length}</span>
@@ -209,7 +236,7 @@ function Home() {
               )
               )
               : (
-                <div className="flex flex-col gap-3 p-6 text-white rounded-xl bg-slate-900/50">
+                <div className="flex flex-col gap-3 p-6 rounded-xl bg-slate-900/50">
                   <div className="flex items-center justify-between gap-2" onClick={() => handleClickAuthor(blog)}>
                     <div className="flex items-center gap-2">
                       <img src={blog.author?.avatar || defaultAvatar} alt="Author profile" className="w-4 h-4 border-l-2 rounded-full border-l-blue-600" />
@@ -220,12 +247,12 @@ function Home() {
                   </div>
                   <hr className="border-gray-800 " />
                   <div className="flex flex-col gap-2 text-white bg-transparent rounded-xl" onClick={() => handleBlogClick(blog)}>
-                    <h3 className="font-bold text-md md:text-lg">{blog.title}</h3>
+                    <h3 className="font-bold cursor-pointer text-md md:text-lg hover:text-blue-500">{blog.title}</h3>
                     <p className="text-xs text-white md:text-sm line-clamp-4">{blog.content}</p>
                     <p className="flex items-center gap-2 text-sm text-white/70">
-                      <BiLike /> {blog.likes?.length}
+                      <BiLike className="cursor-pointer hover:text-red-500" /> {blog.likes?.length}
                       <FaEye /> {blog.views}
-                      <FaRegComment /> {blog.comments?.length}
+                      <FaRegComment className="cursor-pointer hover:text-blue-500" /> {blog.comments?.length}
                     </p>
                   </div>
                 </div>
