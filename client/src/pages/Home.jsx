@@ -12,6 +12,12 @@ import bgImage from "../assets/background.jpg";
 import aboutImage from "../assets/about.png";
 import { motion } from "framer-motion";
 
+/**
+ * Render the Home page for DevOdyssey, presenting the hero, about, tech stack, testimonials, and featured blogs.
+ *
+ * The component loads and displays blogs from state, derives and auto-rotates a featured carousel of popular blogs (pausable on hover), respects a persisted layout preference stored in localStorage, navigates to blog and author pages when items are clicked, and triggers a one-time guided tour when the URL contains "tour".
+ * @returns {JSX.Element} The rendered Home page component tree.
+ */
 function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
