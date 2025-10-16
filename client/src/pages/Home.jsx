@@ -12,6 +12,16 @@ import bgImage from "../assets/background.jpg";
 import aboutImage from "../assets/about.png";
 import { motion } from "framer-motion";
 
+/**
+ * Render the Home page for DevOdyssey with hero, about, tech stack, testimonials, and featured blogs.
+ *
+ * Fetches all blogs on mount, derives a top-5 popular list, and automatically cycles the featured blog every 3 seconds (pausable on hover).
+ * Persists and responds to a "layout" setting stored in localStorage (grid or list) and updates when storage changes.
+ * Navigates to blog detail pages and author pages; viewing a blog dispatches a view action before navigation.
+ * When the URL contains "tour", runs a one-time guided tour per session.
+ *
+ * @returns {JSX.Element} The Home page element.
+ */
 function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
