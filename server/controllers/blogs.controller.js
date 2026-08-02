@@ -35,18 +35,15 @@ export const createBlog = asyncHandler(async (req, res, next) => {
 
 // Update a blog
 export const updateBlog = asyncHandler(async (req, res, next) => {
-    let blog = await Blog.findById(req.params.id);
-    if (!blog) return next(new errorHandler("Blog not found", 404));
-
-    if (blog.author.toString() !== req.user._id.toString()) {
-        return next(new errorHandler("Unauthorized", 403));
-    }
-
-    blog = await Blog.findByIdAndUpdate(
-        req.params.id,
+    const blog = await Blog.findOneAndUpdate(
+        { _id: req.params.id, author: req.user._id },
         req.body,
         { new: true, runValidators: true }
     );
+
+    if (!blog) {
+        return next(new errorHandler("Blog not found or unauthorized", 404));
+    }
 
     res.status(200).json({
         success: true,
@@ -56,14 +53,11 @@ export const updateBlog = asyncHandler(async (req, res, next) => {
 
 // Delete a blog
 export const deleteBlog = asyncHandler(async (req, res, next) => {
-    let blog = await Blog.findById(req.params.id);
-    if (!blog) return next(new errorHandler("Blog not found", 404));
+    const blog = await Blog.findOneAndDelete({ _id: req.params.id, author: req.user._id });
 
-    if (blog.author.toString() !== req.user._id.toString()) {
-        return next(new errorHandler("Unauthorized", 403));
+    if (!blog) {
+        return next(new errorHandler("Blog not found or unauthorized", 404));
     }
-
-    blog = await Blog.findByIdAndDelete(req.params.id);
 
     res.status(200).json({
         success: true,
